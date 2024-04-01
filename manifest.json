@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Browser Lock",
+    "description": "",
+    "version": "0.0.1",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {},
+    "commands": {
+        "inject-script": {
+          "suggested_key": "Ctrl+Shift+Y",
+          "description": "Inject a script on the page"
+        }
+      },
+      "icons": {
+        "32": "BrowserLock icon.png",
+        "128": "BrowserLock icon.png",
+        "16": "BrowserLock icon.png"
+      },
+      "permissions": ["tabs", "activeTab"]  
+}

@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(228, 252, 255);
+    font-family: "Calibri";
+}
+.loginbox_asthetic {
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(82, 167, 213);
+    border-radius: 5px;
+    background-color: rgb(187, 245, 252);
+
+    width: 450px;
+    height: 320px;
+
+    text-align: center;
+
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loginbox_asthetic input {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(82, 167, 213);
+    border-radius: 5px;
+    background-color: rgb(228, 252, 255);
+    width: 120px;
+    height: 25px;
+
+}
+.loginbox_asthetic label {
+    font-size: 16px;
+}
+.loginbox_asthetic h1 {
+    font-size: 35px;
+}
+.loginbox_asthetic img {
+    width: 30px;
+    display: inline;
+}
+.title_thing {
+    display: inline-block;
+}
+
+
+
+#submit {
+    height: 25px;
+    width: 65px;
+}
