@@ -5,14 +5,23 @@ submitbutton.addEventListener("click", ()=>{
     verify(input.value);
 });
 function verify(v) {
-    if (v=="haha") {
+    if (v =="haha") {
+        document.getElementById("e").innerHTML = "Bypass code correct";
+        document.getElementById("e").style.color = rgb(0,255,0);
         correct = 1;
-        /* next step is figutring inter file communication */
-    } else {
+    } else {    
         correct = 0;
+        document.getElementById("e").innerHTML = "Bypass code incorrect";
+        document.getElementById("e").style.color = rgb(255,0,0);
     }
     console.log(correct);
 }
+
+/* function verify(v) {
+    correct = (v === 'haha' ? 1 : 0); 
+    console.log(correct);
+} */
+export { correct }; // Exporting correct variable from login.js
 
 
 

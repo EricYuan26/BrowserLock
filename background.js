@@ -1,3 +1,4 @@
+//import { correct } from './login.js';
 const closeAllTabs = ()=>{
     chrome.tabs.create({url: "login.html"}, function (preset) {
         let querying = chrome.tabs.query({}, function (tabs) {
@@ -19,7 +20,7 @@ const closeAllTabs = ()=>{
 
 // toolbar button event listener
 chrome.action.onClicked.addListener(function (thisTab) {
-    /* if (correct==0) {
+/*     if (correct==0) {
         closeAllTabs();
     } */
     closeAllTabs();
@@ -27,7 +28,7 @@ chrome.action.onClicked.addListener(function (thisTab) {
 
 // it will listen key board shortcut
 chrome.commands.onCommand.addListener((command) => {
-    /* if (correct==0) {
+/*     if (correct==0) {
         closeAllTabs();
     } */
     closeAllTabs();
