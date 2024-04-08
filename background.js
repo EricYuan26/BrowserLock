@@ -18,21 +18,40 @@ const closeAllTabs = ()=>{
     });
 }
 
-// toolbar button event listener
-chrome.action.onClicked.addListener(function (thisTab) {
-/*     if (correct==0) {
-        closeAllTabs();
+const loginCloseAllTabs = ()=>{
+/*     let n = logTabs();
+    if (n.length == 1) {
+        chrome.tabs.create({url: "login.html"});
     } */
-    closeAllTabs();
-});
+    //if you are to not add a detector or smth, you need to maje sure the default tab on startup is set to the ext login page or it will crash.
 
-// it will listen key board shortcut
-chrome.commands.onCommand.addListener((command) => {
-/*     if (correct==0) {
-        closeAllTabs();
-    } */
+
+    let querying = chrome.tabs.query({}, function (tabs) {
+        for (let tab of tabs) {
+            console.log("[RUNTIME] ID logged for tab " + tab.id + " - " + tab.url);
+            if (tab.url !== chrome.runtime.getURL('login.html')) {
+                console.log("[RUNTIME] Closed tab " + tab.id + " - " + tab.url);
+                chrome.tabs.remove(tab.id);
+            }
+        }
+    }); 
+};
+const logTabs = ()=>{
+    chrome.tabs.query({}, function(tabs) {
+        var tabIds = tabs.map(function(tab) {
+            return tab.id;
+        });
+        console.log(tabIds); // This will log an array of tab IDs
+        return tabIds;
+    });
+}
+chrome.action.onClicked.addListener(function (thisTab) {
     closeAllTabs();
 });
-/* chrome.tabs.onCreated.addListener(function(tab) {
+chrome.commands.onCommand.addListener((command) => {
     closeAllTabs();
-}); //I AM SUCH A FUCKING IDIOT */
+});
+chrome.tabs.onCreated.addListener(function() {
+    /* loginCloseAllTabs(); */
+    null;
+});

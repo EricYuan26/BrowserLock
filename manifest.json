@@ -18,5 +18,5 @@
         "128": "BrowserLock icon.png",
         "16": "BrowserLock icon.png"
       },
-      "permissions": ["tabs", "activeTab"]  
+      "permissions": ["tabs", "activeTab"]
 }
